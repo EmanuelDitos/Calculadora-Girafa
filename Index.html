@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Calculadora de Guincho Hidráulico</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Análise Estrutural: Guincho</h1>
+      <div class="input-group">
+        <label for="mass">Massa do Motor (kg)</label>
+        <input type="number" id="mass" value="125" />
+        <button onclick="calcular()">Calcular forças</button>
+      </div>
+
+      <div id="results" class="resultads-card">
+        <p>Peso (W): <span id="out-w">-</span> N</p>
+        <p>Força no Cilindro (FB): <span id="out-fb">-</span> N</p>
+        <p>Força no Membro (DB) <span id="out-db"></span> N</p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
