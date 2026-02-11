@@ -13,7 +13,7 @@ function calcular() {
 
   // 2. Cálculo do Peso (W)
   const g = 9.81;
-  const forcaPeso = massa * g; // Usando nome 'forcaPeso' para não confundir
+  const forcaPeso = massa * g; // Usando nome 'forcaPeso'
 
   // 3. Momento em E: W * L_total = Fy_cilindro * L_cil
   const Fy_cilindro = (forcaPeso * L_total) / L_cil;
@@ -29,7 +29,7 @@ function calcular() {
   const Fx_cilindro = FB * cosThetaFB;
   const DB = Fx_cilindro / Math.cos(Math.PI / 4);
 
-  // 6. EXIBIÇÃO NA TELA (Onde estava o erro)
+  // 6. EXIBIÇÃO NA TELA
   // Usamos o toFixed(2) para garantir que o número apareça com 2 casas decimais
   document.getElementById("out-w").innerText = forcaPeso
     .toFixed(2)
