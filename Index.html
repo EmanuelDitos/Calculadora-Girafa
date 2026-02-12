@@ -2,24 +2,64 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <title>Calculadora de Guincho Hidráulico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador de Engenharia - Guincho</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
-      <h1>Análise Estrutural: Guincho</h1>
-      <div class="input-group">
-        <label for="mass">Massa do Motor (kg)</label>
-        <input type="number" id="mass" value="125" />
-        <button onclick="calcular()">Calcular forças</button>
+      <header>
+        <h1>Configurador de Guincho</h1>
+        <p>Ajuste as dimensões e a carga</p>
+      </header>
+
+      <div class="input-section">
+        <div class="input-row">
+          <div class="input-group">
+            <label>Massa (kg)</label>
+            <input type="number" id="mass" value="125" />
+          </div>
+          <div class="input-group">
+            <label>Altura H (m)</label>
+            <input type="number" id="H_braço" value="3" step="0.1" />
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="input-group">
+            <label>Braço Total (m)</label>
+            <input type="number" id="L_total" value="3" step="0.1" />
+          </div>
+          <div class="input-group">
+            <label>Apoio Cilindro (m)</label>
+            <input type="number" id="L_cil" value="2" step="0.1" />
+          </div>
+        </div>
+
+        <button id="btn-calcular">Calcular Estrutura</button>
       </div>
 
-      <div id="results" class="resultads-card">
-        <p>Peso (W): <span id="out-w">-</span> N</p>
-        <p>Força no Cilindro (FB): <span id="out-fb">-</span> N</p>
-        <p>Força no Membro (DB) <span id="out-db"></span> N</p>
+      <div class="results-container">
+        <div class="card">
+          <span class="label">Peso da Carga (W)</span>
+          <span class="value" id="out-w">0,00</span>
+          <span class="unit">Newtons</span>
+        </div>
+
+        <div class="card highlight">
+          <span class="label">Força no Cilindro (FB)</span>
+          <span class="value" id="out-fb">0,00</span>
+          <span class="unit">Newtons</span>
+        </div>
+
+        <div class="card">
+          <span class="label">Força no Suporte (DB)</span>
+          <span class="value" id="out-db">0,00</span>
+          <span class="unit">Newtons</span>
+        </div>
       </div>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>
